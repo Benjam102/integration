@@ -194,7 +194,7 @@ Reno/Tahoe International Airport,KRNO,RNO,United States,Reno,39.5261206,-119.812
 Springfield-Branson National,KSGF,SGF,United States,Springfield,39.7990175,-89.6439575
 Birmingham-Shuttlesworth International Airport,KBHM,BHM,United States,Birmingham,52.4796992,-1.9026911
 Hilo International Airport,PHTO,ITO,United States,Hilo,19.685445799999997,-155.10037544637729
-Northwest Arkansas National Airport,KXNA,XNA,United States,Fayetteville/Springdale/Rogers,,
+Northwest Arkansas National Airport,KXNA,XNA,United States,Fayetteville/Springdale/Rogers,36.28810,-94.26019
 James M Cox Dayton International Airport,KDAY,DAY,United States,Dayton,39.7589478,-84.1916069
 Huntsville International-Carl T Jones Field,KHSV,HSV,United States,Huntsville,34.729847,-86.5859011
 Venice Marco Polo Airport,LIPZ,VCE,Italy,Venice,45.4371908,12.3345898
@@ -378,7 +378,7 @@ Marechal Rondon Airport,SBCY,CGB,Brazil,Cuiabá,-15.5986686,-56.0991301
 Domodedovo International Airport,UUDD,DME,Russia,Moscow,55.7505412,37.6174782
 Menara Airport,GMMX,RAK,Morocco,Marrakech,31.6258257,-7.9891608
 Halifax / Stanfield International Airport,CYHZ,YHZ,Canada,Halifax,44.648618,-63.5859487
-Larnaca International Airport,LCLK,LCA,Cyprus,Larnarca,,
+Larnaca International Airport,LCLK,LCA,Cyprus,Larnarca,34.87510,33.62490
 Incheon International Airport,RKSI,ICN,South Korea,Seoul,37.5666791,126.9782914
 OR Tambo International Airport,FAOR,JNB,South Africa,Johannesburg,-26.205,28.049722
 Lester B Pearson International Airport,CYYZ,YYZ,Canada,Toronto,43.6534817,-79.3839347
@@ -402,7 +402,7 @@ Dzaoudzi Pamandzi International Airport,FMCZ,DZA,Mayotte,Dzaoudzi,-12.782151,45.
 Daytona Beach International Airport,KDAB,DAB,United States,Daytona Beach,29.2108147,-81.0228331
 Cataratas International Airport,SBFI,IGU,Brazil,Foz Do Iguaçu,-25.5304023,-54.5830692
 Alfonso Bonilla Aragon International Airport,SKCL,CLO,Colombia,Cali,3.4519988,-76.5325259
-La Palma Airport,GCLA,SPC,Spain,"Sta Cruz de la Palma, La Palma Island",,
+La Palma Airport,GCLA,SPC,Spain,"Sta Cruz de la Palma, La Palma Island",28.68071,-17.77271
 Paderborn Lippstadt Airport,EDLP,PAD,Germany,Paderborn,51.71895955,8.764869778177559
 Clermont-Ferrand Auvergne Airport,LFLC,CFE,France,Clermont-Ferrand/Auvergne,45.7774551,3.0819427
 Tours-Val-de-Loire Airport,LFOT,TUF,France,Tours/Val de Loire (Loire Valley),47.5049384,1.2354288
