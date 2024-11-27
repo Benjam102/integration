@@ -26,5 +26,5 @@ def reset_airport_data(file_path):
     print("Données importées avec succès.")
 
 # Chemin vers le fichier CSV
-file_path = 'airports.csv'
-reset_airport_data(file_path)
+#file_path = 'airports.csv'
+#reset_airport_data(file_path)
