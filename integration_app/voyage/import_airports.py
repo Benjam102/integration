@@ -1,4 +1,18 @@
+import sys
+import os
+import django
 import csv
+
+# Ajoutez la racine de votre projet au chemin
+sys.path.append('/home/francois/Documents/ZZ3/integration/integration_app')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'integration_app.settings')
+django.setup()
+
+
+from voyage.models import Airport
+# Votre code ici
+
+# Maintenant vous pouvez importer les modèles
 from voyage.models import Airport
 
 def reset_airport_data(file_path):
@@ -26,5 +40,5 @@ def reset_airport_data(file_path):
     print("Données importées avec succès.")
 
 # Chemin vers le fichier CSV
-#file_path = 'airports.csv'
-#reset_airport_data(file_path)
+file_path = 'airports.csv'
+reset_airport_data(file_path)
