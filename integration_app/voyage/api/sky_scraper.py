@@ -15,6 +15,8 @@ def get_city_id(city_name):
     
     if response['status']:
         results = response['data']
+        if not results:
+            return []
         item = results[0]
         extracted_data = {'skyId': item['skyId'], 'entityId': item['entityId']}
         
