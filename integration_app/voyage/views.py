@@ -47,29 +47,29 @@ def acceuil(request):
         #destination = request.POST.get("destination")
         date = request.POST.get("date")
         return_date = request.POST.get("returnDate")
-    else:
-        origin = "Paris"
-        date = "2025-02-15"
-        return_date = "2025-02-16"
+    #else:
+    #    origin = "Paris"
+    #    date = "2025-02-15"
+    #    return_date = "2025-02-16"
     
-    if first_city:
-        origin_data = get_city_id("Paris")
-        destination_data = get_city_id(first_city)
-        if len(destination_data)==0:
-            destination_data = get_city_id(second_city)
-        if len(destination_data)==0:
-            destination_data = get_city_id(third_city)
-        
-        print(origin_data)
-        print(destination_data)
+        if first_city:
+            origin_data = get_city_id("Paris")
+            destination_data = get_city_id(first_city)
+            if len(destination_data)==0:
+                destination_data = get_city_id(second_city)
+            if len(destination_data)==0:
+                destination_data = get_city_id(third_city)
             
-        if origin_data and destination_data:
-            flights = get_flights(
-                origin_data['skyId'], destination_data['skyId'],
-                origin_data['entityId'], destination_data['entityId'],
-                date="2025-02-15",  # Exemple de date à récupérer via la requête,
-                returnDate="2025-02-16"  # Exemple de date à récupérer via la requête
-            )
+            print(origin_data)
+            print(destination_data)
+                
+            if origin_data and destination_data:
+                flights = get_flights(
+                    origin_data['skyId'], destination_data['skyId'],
+                    origin_data['entityId'], destination_data['entityId'],
+                    date=date,  # Exemple de date à récupérer via la requête,
+                    returnDate=return_date  # Exemple de date à récupérer via la requête
+                )
     print(flights)
     
     return render(request, "pageAcceuil.html", {"flights": flights})
