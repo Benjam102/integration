@@ -6,6 +6,7 @@ import pandas as pd
 from .models import Airport
 
 from .api.openMeteo import twoWeakWeatherForecast, calculGeneralWeather
+from .api.sky_scraper import get_city_id, get_flights
 
 def acceuil(request):
     # Normalement disponible via la requête
@@ -35,5 +36,40 @@ def acceuil(request):
 
         
     print(L_cities_score)
-
-    return render(request, "pageAcceuil.html")
+    
+    first_city = list(L_cities_score[0].keys())[0] if L_cities_score else None
+    second_city = list(L_cities_score[1].keys())[0] if L_cities_score else None
+    third_city = list(L_cities_score[2].keys())[0] if L_cities_score else None
+    flights = []
+    
+    if request.method == "POST":
+        origin = request.POST.get("origin")
+        #destination = request.POST.get("destination")
+        date = request.POST.get("date")
+        return_date = request.POST.get("returnDate")
+    #else:
+    #    origin = "Paris"
+    #    date = "2025-02-15"
+    #    return_date = "2025-02-16"
+    
+        if first_city:
+            origin_data = get_city_id("Paris")
+            destination_data = get_city_id(first_city)
+            if len(destination_data)==0:
+                destination_data = get_city_id(second_city)
+            if len(destination_data)==0:
+                destination_data = get_city_id(third_city)
+            
+            print(origin_data)
+            print(destination_data)
+                
+            if origin_data and destination_data:
+                flights = get_flights(
+                    origin_data['skyId'], destination_data['skyId'],
+                    origin_data['entityId'], destination_data['entityId'],
+                    date=date,  # Exemple de date à récupérer via la requête,
+                    returnDate=return_date  # Exemple de date à récupérer via la requête
+                )
+    print(flights)
+    
+    return render(request, "pageAcceuil.html", {"flights": flights})

@@ -1,27 +1,61 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
-	<head>
-		<!-- Title of the window -->
-		<title>Voyage</title>
+<head>
+    <!-- Title of the window -->
+    <title>Voyage</title>
 
-		<!-- Specifies encoding to the browser (management of accents, etc.) -->
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- Specifies encoding to the browser (management of accents, etc.) -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-		<!-- Style sheets -->
-		<!--link rel="stylesheet" type="text/css" href="{% static 'CSS/headerFooter.css' %}"-->
+    <!-- Inhibits wide screens on mobile phones: prevents the mobile phone from having a wide screen that requires zooming in -->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
 
-		<!-- Inhibits wide screens on mobile phones: prevents the mobile phone from having a wide screen that requires zooming in -->
-		<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
+    <!-- Style sheets -->
+    <!-- link rel="stylesheet" type="text/css" href="{% static 'CSS/style.css' %}" -->
 
-		<!-- Page icon -->
-		<!--link rel="icon" href="{% static 'rugbyBut.ico' %}" type="image/x-icon"-->
-	</head>
+    <!-- Page icon -->
+    <!-- link rel="icon" href="{% static 'icon.ico' %}" type="image/x-icon" -->
+</head>
 
-    <body>
-	   Bonjour les anciens !
-	</body>
+<body>
+	Bonjour les anciens, je suis le fichier pageAcceuil.html.
+    <h1>Rechercher un Vol</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="origin">Ville de départ :</label>
+        <input type="text" id="origin" name="origin" value="{{ origin }}" required>
+
+        <label for="date">Date de départ :</label>
+        <input type="date" id="date" name="date" value="{{ date }}" required>
+
+        <label for="returnDate">Date de retour (optionnelle) :</label>
+        <input type="date" id="returnDate" name="returnDate" value="{{ returnDate }}">
+
+        <button type="submit">Rechercher</button>
+    </form>
+
+    {% if flights %}
+        <h2>Résultats de la recherche :</h2>
+        <ul>
+            {% for flight in flights %}
+                <li>
+                    Prix : {{ flight.price }}<br>
+                    <ul>
+                        {% for leg in flight.legs %}
+                            <li>
+                                Départ : {{ leg.departure }} - Arrivée : {{ leg.arrival }}<br>
+                                De : {{ leg.origin }} à {{ leg.destination }}<br>
+                                Durée : {{ leg.duration }} minutes
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
 </html>
-
