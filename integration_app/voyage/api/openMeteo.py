@@ -11,7 +11,7 @@ def twoWeakWeatherForecast(latitude: float, longitude: float) -> DataFrame :
     function that provides a code to give the general weather for each day of the two weeks
 
     Parameters:
-        latitude: Latitute of the city
+        latitude : Latitute of the city
         Longitude : Longitude of the city
 
     Returns:
@@ -55,5 +55,22 @@ def twoWeakWeatherForecast(latitude: float, longitude: float) -> DataFrame :
     return daily_dataframe
 
 
-def calculGeneralWeather(df_city: DataFrame) -> int :
-    return df_city['weather_code'].sum()
+def calculGeneralWeather(df_city: DataFrame, date_start : str, date_return : str) -> int :
+    """
+    function that provides the general weather for the selected period
+
+    Parameters:
+        df_city : df which contains each day and its code over two weeks
+        date_start : Date of departure
+        date_return : Date of return
+
+    Returns:
+        daily_dataframe: DataFrame with each day with his code  
+    """
+    if date_return:
+        df_city_range = df_city[(df_city['date'] >= date_start) & (df_city['date'] <= date_return)]
+    else:
+        df_city_range = df_city[df_city['date'] >= date_start]
+
+    return df_city_range['weather_code'].sum()
+

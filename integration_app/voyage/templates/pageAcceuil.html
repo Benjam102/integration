@@ -21,10 +21,12 @@
 </head>
 
 <body>
-	Bonjour les anciens, je suis le fichier pageAcceuil.html.
     <h1>Rechercher un Vol</h1>
     <form method="POST">
         {% csrf_token %}
+        
+        <label for="origin">Pays (mettre France) :</label>
+        <input type="text" id="countryChoosen" name="countryChoosen" value="{{ countryChoosen }}" required>
 
         <label for="origin">Ville de départ :</label>
         <input type="text" id="origin" name="origin" value="{{ origin }}" required>
