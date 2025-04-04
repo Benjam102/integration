@@ -1,4 +1,4 @@
-#Projet d'intégration d'application
+Projet d'intégration d'application
 
 Notre projet consiste à développer une application innovante de suggestion de voyage, conçue pour aider les utilisateurs à trouver la destination idéale en fonction de divers critères : le pays, le continent, le type de ville (plage, montagne, ville culturelle), ainsi que la période de séjour, limitée à un maximum de deux semaines.
 
